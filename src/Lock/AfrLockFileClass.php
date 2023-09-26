@@ -17,9 +17,6 @@ class AfrLockFileClass implements AfrLockInterface
         if (!$sTempDir) {
             $sTempDir = sys_get_temp_dir();
         }
-        if ($sTempDir) {
-            $sTempDir .= DIRECTORY_SEPARATOR.'lock';
-        }
         if (!$sTempDir) {
             $sTempDir = __DIR__;
         }
