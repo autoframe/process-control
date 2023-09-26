@@ -1,0 +1,28 @@
+<?php
+declare(strict_types=1);
+
+require_once (__DIR__.'/../../vendor/autoload.php');
+
+//TEST AfrLockFileTest
+ob_start();
+
+$oLock = new \Autoframe\Process\Control\Lock\AfrLockFileClass($_SERVER['argv'][1]);
+echo 'obtainLock: ';
+var_dump($oLock->obtainLock());
+
+echo "\n\nLockPid: ";
+var_dump($oLock->getLockPid());
+
+$iMsSleep = max(intval($_SERVER['argv'][2]), 20);
+if ($iMsSleep < 1000) {
+    usleep($iMsSleep * 1000);//MS
+} else {
+    sleep((int)ceil($iMsSleep / 1000));//Sec
+}
+
+echo "\n\nreleaseLock: ";
+var_dump($oLock->releaseLock());
+ob_end_flush();
+
+
+
