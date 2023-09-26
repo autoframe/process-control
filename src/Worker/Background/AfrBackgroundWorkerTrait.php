@@ -41,4 +41,5 @@ trait AfrBackgroundWorkerTrait
             exec($call . ' > /dev/null &');
         }
     }
+
 }
