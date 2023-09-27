@@ -1,6 +1,6 @@
 # Autoframe is a low level framework that is oriented on SOLID flexibility
 
-[![Build Status](https://github.com/autoframe/process-control/workflows/PHPUnit-tests/badge.svg?branch=main)](https://github.com/autoframe/process-control/actions?query=branch:main)
+[![Build Status](https://github.com/autoframe/process-control/workflows/PHPUnit-tests/badge.svg)](https://github.com/autoframe/process-control/actions?query=branch:main)
 [![License: The 3-Clause BSD License](https://img.shields.io/github/license/autoframe/process-control)](https://opensource.org/license/bsd-3-clause/)
 ![Packagist Version](https://img.shields.io/packagist/v/autoframe/process-control?label=packagist%20stable)
 [![Downloads](https://img.shields.io/packagist/dm/autoframe/process-control.svg)](https://packagist.org/packages/autoframe/process-control)
