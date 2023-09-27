@@ -7,6 +7,7 @@
 
 *PHP worker instance create and inter process lock check Autoframe Framework*
 
+
 ```php
 /** Concrete implementation that uses the php temporary folder to store the lock */
 namespace Autoframe\Process\Control\Lock;
