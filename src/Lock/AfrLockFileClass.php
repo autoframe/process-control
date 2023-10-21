@@ -34,9 +34,21 @@ class AfrLockFileClass implements AfrLockInterface
     public function __destruct()
     {
         if ($this->writeLockedFilePointer) {
-            $this->releaseLock();
+            //  $this->releaseLock(); //GC can run before script end, so isLocked will fail
+            //  DEAD MAN SWITCH OFF
+            register_shutdown_function(function () {
+                if (empty($this->writeLockedFilePointer)) {
+                    return;
+                }
+                fclose($this->writeLockedFilePointer);
+                if (is_file($this->sLockPath)) {
+                    unlink($this->sLockPath);
+                }
+                if (is_file($this->sPidPath)) {
+                    unlink($this->sPidPath);
+                }
+            });
         }
-
     }
 
     /**
