@@ -19,7 +19,7 @@ class AfrBackgroundWorkerTest extends TestCase
     public function overWriteFileTest(): void
     {
         $iWorkers = 2;
-        $iWorkerLive = 2500;
+        $iWorkerLive = 6500;
         $execPhp = __DIR__ . DIRECTORY_SEPARATOR . 'AfrTestWorkerPc.php';
         $aWorkerFiles = [];
         for ($i = 1; $i <= $iWorkers; $i++) {
